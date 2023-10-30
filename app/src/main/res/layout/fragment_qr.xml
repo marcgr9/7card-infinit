@@ -7,16 +7,28 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/qr"
+        android:id="@+id/qrBackground"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintWidth_percent=".7"
-        app:layout_constraintVertical_chainStyle="spread"
+        android:src="@drawable/background_qr"
+        app:layout_constraintWidth_percent=".8"
+        app:layout_constraintHeight_percent=".6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />
+
+    <ImageView
+        android:id="@+id/qr"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintWidth_percent=".6"
+        android:layout_marginTop="92dp"
+        app:layout_constraintStart_toStartOf="@id/qrBackground"
+        app:layout_constraintEnd_toEndOf="@id/qrBackground"
+        app:layout_constraintTop_toTopOf="@id/qrBackground"
+        app:layout_constraintBottom_toBottomOf="@id/qrBackground" />
 
     <Button
         android:id="@+id/generateButton"
