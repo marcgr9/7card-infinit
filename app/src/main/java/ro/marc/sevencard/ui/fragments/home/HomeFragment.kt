@@ -23,6 +23,21 @@ class HomeFragment: BaseFragment<MainActivity, FragmentHomeBinding>() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         super.onCreateView(inflater, container, savedInstanceState)
 
+        binding.bottomNavigation.setOnItemSelectedListener {
+            if (it.itemId == binding.bottomNavigation.selectedItemId)
+                return@setOnItemSelectedListener true
+
+            when (it.itemId) {
+                R.id.action_home -> {
+                    navController.navigate(R.id.generateDestination)
+                }
+                R.id.action_decrypt -> {
+                    navController.navigate(R.id.decryptDestination)
+                }
+            }
+            return@setOnItemSelectedListener true
+        }
+
         return binding.root
     }
 

@@ -13,4 +13,13 @@
 
     </fragment>
 
+    <fragment
+        android:id="@+id/decryptDestination"
+        android:name="ro.marc.sevencard.ui.fragments.decrypt.DecryptFragment"
+        android:label="Decrypt">
+
+
+
+    </fragment>
+
 </navigation>

@@ -21,6 +21,7 @@ class MainViewModel: ViewModel() {
         get() = _navigationEvent
 
     val userId = MutableLiveData("")
+    val toDecrypt = MutableLiveData("")
 
     fun navigateTo(navigationCase: NavigationCase) {
         _navigationEvent.value = navigationCase
