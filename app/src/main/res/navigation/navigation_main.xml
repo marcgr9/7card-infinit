@@ -2,12 +2,21 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/navigation_main"
-    app:startDestination="@id/home">
+    app:startDestination="@id/homeDestination">
 
     <fragment
-        android:id="@+id/home"
+        android:id="@+id/homeDestination"
         android:name="ro.marc.sevencard.ui.fragments.HomeFragment"
         android:label="Home">
+
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/qrDestination"
+        android:name="ro.marc.sevencard.ui.fragments.QrFragment"
+        android:label="Qr">
 
 
 

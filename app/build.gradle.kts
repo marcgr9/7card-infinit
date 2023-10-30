@@ -48,4 +48,5 @@ dependencies {
 
     implementation(libs.koin)
     implementation(libs.zxing)
+    implementation(libs.protolite.well.known.types)
 }
