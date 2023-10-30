@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Infinite 7card</string>
+    <string name="home_id_hint">e.g. 372913</string>
+    <string name="home_generate">Generate QR</string>
+</resources>
