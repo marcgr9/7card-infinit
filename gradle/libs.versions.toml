@@ -9,6 +9,7 @@ retrofit = "2.9.0"
 zxing = "4.3.0"
 nav = "2.4.1"
 protolite-well-known-types = "18.0.0"
+room = "2.6.0"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
@@ -21,7 +22,9 @@ zxing = { group = "com.journeyapps", name = "zxing-android-embedded", version.re
 navigation = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "nav" }
 navigation-ui = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "nav" }
 protolite-well-known-types = { group = "com.google.firebase", name = "protolite-well-known-types", version.ref = "protolite-well-known-types" }
-
+room = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

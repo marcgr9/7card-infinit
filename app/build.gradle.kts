@@ -49,4 +49,7 @@ dependencies {
     implementation(libs.koin)
     implementation(libs.zxing)
     implementation(libs.protolite.well.known.types)
+    implementation(libs.room)
+    implementation(libs.room.ktx)
+    kapt(libs.room.compiler)
 }

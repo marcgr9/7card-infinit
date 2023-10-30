@@ -72,6 +72,16 @@ class QrFragment: BaseFragment<MainActivity, FragmentQrBinding>() {
             )
         }
 
+        binding.save.setOnClickListener {
+            qrVm.save()
+        }
+
+        qrVm.isIdSaved.observe(viewLifecycleOwner) {
+            if (it) {
+                binding.save.setColorFilter(resources.getColor(R.color.green, null))
+            }
+        }
+
         return binding.root
     }
 
