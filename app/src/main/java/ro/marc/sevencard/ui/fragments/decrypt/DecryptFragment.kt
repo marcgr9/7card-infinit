@@ -8,18 +8,24 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
+import android.widget.TextView
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import ro.marc.sevencard.databinding.FragmentDecryptBinding
 import ro.marc.sevencard.ui.MainActivity
 import ro.marc.sevencard.ui.MainViewModel
 import ro.marc.sevencard.ui.fragments.BaseFragment
+import ro.marc.sevencard.ui.fragments.home.HomeFragment
 
 class DecryptFragment: BaseFragment<MainActivity, FragmentDecryptBinding>() {
 
     private val vm: MainViewModel by sharedViewModel()
     private val decryptVm: DecryptViewModel by lazy {
         this@DecryptFragment.getViewModel()
+    }
+
+    private val parent: HomeFragment by lazy {
+        parentFragment!!.parentFragment as HomeFragment
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
@@ -42,6 +48,11 @@ class DecryptFragment: BaseFragment<MainActivity, FragmentDecryptBinding>() {
                 decryptVm.decrypt(vm.toDecrypt.value!!)
             }
             true
+        }
+
+        binding.id.setOnClickListener {
+            vm.userId.value = (it as TextView).text.toString()
+            parent.navigateToHome()
         }
 
         return binding.root

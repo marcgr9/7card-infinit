@@ -9,4 +9,6 @@
     <string name="qr_description">Scan the access code at the gym reception</string>
     <string name="qr_account_number">7Card number:</string>
     <string name="decrypt_hint">Base64 string</string>
+    <string name="main_list">Saved users</string>
+    <string name="list_no_alias">No alias</string>
 </resources>

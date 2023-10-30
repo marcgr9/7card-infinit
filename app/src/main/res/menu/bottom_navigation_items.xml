@@ -6,4 +6,7 @@
     <item android:id="@+id/action_decrypt"
         android:title="@string/main_get_id"
         android:icon="@drawable/icon_computing" />
+    <item android:id="@+id/action_list"
+        android:title="@string/main_list"
+        android:icon="@drawable/icon_people" />
 </menu>

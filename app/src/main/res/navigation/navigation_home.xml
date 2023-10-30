@@ -22,4 +22,13 @@
 
     </fragment>
 
+    <fragment
+        android:id="@+id/listDestination"
+        android:name="ro.marc.sevencard.ui.fragments.list.UsersListFragment"
+        android:label="List">
+
+
+
+    </fragment>
+
 </navigation>

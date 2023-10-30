@@ -34,11 +34,18 @@ class HomeFragment: BaseFragment<MainActivity, FragmentHomeBinding>() {
                 R.id.action_decrypt -> {
                     navController.navigate(R.id.decryptDestination)
                 }
+                R.id.action_list -> {
+                    navController.navigate(R.id.listDestination)
+                }
             }
             return@setOnItemSelectedListener true
         }
 
         return binding.root
+    }
+
+    fun navigateToHome() {
+        binding.bottomNavigation.selectedItemId = R.id.action_home
     }
 
 }

@@ -48,7 +48,9 @@ class Application: Application() {
                 },
                 module {
                     viewModel {
-                        MainViewModel()
+                        MainViewModel(
+                            get(),
+                        )
                     }
                     viewModel {
                         QRViewModel(
