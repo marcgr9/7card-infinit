@@ -2,19 +2,19 @@ package ro.marc.sevencard.generator.impl
 
 import android.util.Base64
 import ro.marc.sevencard.generator.QrDataGenerator
-import java.security.InvalidAlgorithmParameterException
-import java.security.InvalidKeyException
-import java.security.NoSuchAlgorithmException
+import java.security.MessageDigest
 import java.security.SecureRandom
-import javax.crypto.BadPaddingException
 import javax.crypto.Cipher
-import javax.crypto.IllegalBlockSizeException
-import javax.crypto.NoSuchPaddingException
 import javax.crypto.spec.IvParameterSpec
 import javax.crypto.spec.SecretKeySpec
 import kotlin.jvm.internal.Intrinsics
 
-class QrDataGeneratorImpl: QrDataGenerator {
+class SevenCardQrDataGeneratorImpl: QrDataGenerator {
+
+    companion object {
+        private const val PLAIN_SECRET = "salamdesibiu"
+        private const val SECRET_LENGTH = 32
+    }
 
     override fun encode(userId: Long): String {
         val plain = String.format(
@@ -26,8 +26,8 @@ class QrDataGeneratorImpl: QrDataGenerator {
         return Base64
             .encodeToString(
                 encryptText(
-                    "1698656871533   302437",
-                    "ab17be2db66a7f90d8b375bcfd0159af".toByteArray(Charsets.UTF_8),
+                    plain,
+                    generateSecret(),
                     "2007012007012007".toByteArray(Charsets.UTF_8),
                 ),
                 0,
@@ -53,6 +53,20 @@ class QrDataGeneratorImpl: QrDataGenerator {
         }
         Intrinsics.checkExpressionValueIsNotNull(doFinal, "encrypted")
         return doFinal
+    }
+
+    private fun generateSecret(): ByteArray {
+        val instance = MessageDigest.getInstance("SHA-256")
+        instance.update(PLAIN_SECRET.toByteArray(Charsets.UTF_8))
+        val digest = instance.digest()
+
+        val hexString = digest.joinToString(separator = "") {
+            "%02x".format(it)
+        }
+
+        val trimmedHexString = hexString.take(SECRET_LENGTH)
+
+        return trimmedHexString.toByteArray(Charsets.UTF_8)
     }
 
 }
