@@ -7,6 +7,7 @@ import org.koin.dsl.module
 import ro.marc.sevencard.generator.QrDataGenerator
 import ro.marc.sevencard.generator.impl.SevenCardQrDataGeneratorImpl
 import ro.marc.sevencard.ui.MainViewModel
+import ro.marc.sevencard.ui.fragments.qr.QRViewModel
 
 class Application: Application() {
 
@@ -21,8 +22,12 @@ class Application: Application() {
                 },
                 module {
                     viewModel {
-                        MainViewModel(
+                        MainViewModel()
+                    }
+                    viewModel {
+                        QRViewModel(
                             get(),
+                            it.get<Long>()
                         )
                     }
                 },

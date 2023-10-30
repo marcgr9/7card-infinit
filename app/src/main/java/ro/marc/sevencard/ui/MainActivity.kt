@@ -1,8 +1,12 @@
 package ro.marc.sevencard.ui
 
 import android.app.Activity
+import android.content.Context
 import android.os.Bundle
 import android.os.PersistableBundle
+import android.view.MotionEvent
+import android.view.inputmethod.InputMethodManager
+import android.widget.EditText
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.FragmentActivity
 import androidx.navigation.NavController
@@ -26,7 +30,7 @@ class MainActivity: FragmentActivity() {
         vm.navigationEvent.observe(this) {
             when (it) {
                 MainViewModel.NavigationCase.Home -> {
-                    navController.navigate(R.id.homeDestination)
+                    navController.navigate(R.id.qrToHome)
                 }
                 MainViewModel.NavigationCase.Qr -> {
                     navController.navigate(R.id.qrDestination)
@@ -39,6 +43,32 @@ class MainActivity: FragmentActivity() {
 
             }
         })
+    }
+
+    override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
+        ev?.let { event ->
+            if (event.action == MotionEvent.ACTION_UP) {
+                currentFocus?.let { view ->
+                    if (view is EditText) {
+                        val touchCoordinates = IntArray(2)
+                        view.getLocationOnScreen(touchCoordinates)
+                        val x: Float = event.rawX + view.getLeft() - touchCoordinates[0]
+                        val y: Float =
+                            event.rawY + view.getTop() - touchCoordinates[1] //If the touch position is outside the EditText then we hide the keyboard
+                        if (x < view.getLeft() || x > view.getRight() || y < view.getTop() || y > view.getBottom()) {
+                            try {
+                                val imm = view.context!!.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                                imm.hideSoftInputFromWindow(view.windowToken, 0)
+                                view.clearFocus()
+                            } catch (e: Exception) {
+                                e.printStackTrace()
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return super.dispatchTouchEvent(ev)
     }
 
 }

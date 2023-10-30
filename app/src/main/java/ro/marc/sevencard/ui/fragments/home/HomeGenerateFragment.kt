@@ -1,15 +1,16 @@
-package ro.marc.sevencard.ui.fragments
+package ro.marc.sevencard.ui.fragments.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
-import ro.marc.sevencard.databinding.FragmentHomeBinding
+import ro.marc.sevencard.databinding.FragmentHomeGenerateBinding
 import ro.marc.sevencard.ui.MainActivity
 import ro.marc.sevencard.ui.MainViewModel
+import ro.marc.sevencard.ui.fragments.BaseFragment
 
-class HomeFragment: BaseFragment<MainActivity, FragmentHomeBinding>() {
+class HomeGenerateFragment: BaseFragment<MainActivity, FragmentHomeGenerateBinding>() {
 
     private val vm: MainViewModel by sharedViewModel()
 
@@ -20,7 +21,9 @@ class HomeFragment: BaseFragment<MainActivity, FragmentHomeBinding>() {
         binding.lifecycleOwner = viewLifecycleOwner
 
         binding.generateButton.setOnClickListener {
-            vm.navigateTo(MainViewModel.NavigationCase.Qr)
+            if (!vm.userId.value.isNullOrBlank()) {
+                vm.navigateTo(MainViewModel.NavigationCase.Qr)
+            }
         }
 
         return binding.root

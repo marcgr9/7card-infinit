@@ -2,7 +2,10 @@
     <string name="app_name">Infinite 7card</string>
     <string name="home_id_hint">e.g. 372913</string>
     <string name="home_generate">Generate QR</string>
-    <string name="qr_dismiss">Dismiss</string>
+    <string name="qr_dismiss">CLOSE</string>
     <string name="main_access">Access</string>
     <string name="main_get_id">Decrypt QR</string>
+    <string name="qr_title">Scan &amp; Play</string>
+    <string name="qr_description">Scan the access code at the gym reception</string>
+    <string name="qr_account_number">7Card number:</string>
 </resources>

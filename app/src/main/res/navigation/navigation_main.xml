@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/homeDestination"
-        android:name="ro.marc.sevencard.ui.fragments.HomeFragment"
+        android:name="ro.marc.sevencard.ui.fragments.home.HomeFragment"
         android:label="Home">
 
 
@@ -15,10 +15,16 @@
 
     <fragment
         android:id="@+id/qrDestination"
-        android:name="ro.marc.sevencard.ui.fragments.QrFragment"
+        android:name="ro.marc.sevencard.ui.fragments.qr.QrFragment"
         android:label="Qr">
 
-
+        <action
+            android:id="@+id/qrToHome"
+            app:destination="@id/homeDestination"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out" />
 
     </fragment>
 

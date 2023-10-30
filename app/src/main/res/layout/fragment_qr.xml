@@ -13,6 +13,7 @@
         android:src="@drawable/background_qr"
         app:layout_constraintWidth_percent=".8"
         app:layout_constraintHeight_percent=".6"
+        app:layout_constraintVertical_bias="0.2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -30,13 +31,70 @@
         app:layout_constraintTop_toTopOf="@id/qrBackground"
         app:layout_constraintBottom_toBottomOf="@id/qrBackground" />
 
-    <Button
-        android:id="@+id/generateButton"
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/qr_title"
+        android:textSize="24sp"
+        android:fontFamily="@font/bold_extra"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/qrBackground"
+        app:layout_constraintBottom_toTopOf="@id/description" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/qr_description"
+        android:layout_marginTop="4dp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintBottom_toTopOf="@+id/accountNumber" />
+
+    <TextView
+        android:id="@+id/accountNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/qr_account_number"
+        android:textSize="12sp"
+        android:layout_marginTop="4dp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/description"
+        app:layout_constraintBottom_toTopOf="@+id/progressBar" />
+
+    <ProgressBar
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:id="@+id/progressBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:layout_marginTop="8dp"
+        app:layout_constraintWidth_percent=".5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/accountNumber"
+        app:layout_constraintBottom_toTopOf="@id/dismissButton"
+        tools:progress="35" />
+
+    <TextView
+        android:id="@+id/dismissButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/qr_dismiss"
-        app:layout_constraintVertical_bias="1"
-        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="16sp"
+        android:textColor="@color/accent"
+        android:fontFamily="@font/bold"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@id/progressBar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

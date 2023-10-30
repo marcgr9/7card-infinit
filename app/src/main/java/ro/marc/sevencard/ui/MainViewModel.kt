@@ -9,24 +9,11 @@ import kotlinx.coroutines.flow.flow
 import ro.marc.sevencard.generator.QrDataGenerator
 import ro.marc.sevencard.util.SingleLiveEvent
 
-class MainViewModel(
-    private val qrDataGenerator: QrDataGenerator,
-): ViewModel() {
-
-    companion object {
-        const val QR_CODE_DELAY_MS: Long = 350
-    }
+class MainViewModel: ViewModel() {
 
     sealed class NavigationCase {
         object Home: NavigationCase()
         object Qr: NavigationCase()
-    }
-
-    val encodedDataFlow: Flow<String> = flow {
-        while (true) {
-            emit(qrDataGenerator.encode(userId.value!!.toLong()))
-            delay(QR_CODE_DELAY_MS)
-        }
     }
 
     private val _navigationEvent = SingleLiveEvent<NavigationCase>()
