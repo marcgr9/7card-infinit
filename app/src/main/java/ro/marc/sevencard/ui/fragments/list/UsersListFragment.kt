@@ -1,6 +1,5 @@
 package ro.marc.sevencard.ui.fragments.list
 
-import android.app.AlertDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -42,6 +41,11 @@ class UsersListFragment: BaseFragment<MainActivity, FragmentListBinding>() {
 
         vm.usersList.observe(viewLifecycleOwner) {
             usersAdapter.setUsers(it)
+            if (it.isEmpty()) {
+                binding.message.visibility = View.VISIBLE
+            } else {
+                binding.message.visibility = View.GONE
+            }
         }
 
         vm.fetchUsers()

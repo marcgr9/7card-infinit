@@ -14,4 +14,5 @@
     <string name="dialog_user_alias_hint">Alias</string>
     <string name="dialog_user_delete">Delete</string>
     <string name="dialog_user_save">Save</string>
+    <string name="list_no_users">No users were saved</string>
 </resources>
