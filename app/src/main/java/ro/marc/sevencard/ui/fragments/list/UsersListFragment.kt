@@ -27,7 +27,7 @@ class UsersListFragment: BaseFragment<MainActivity, FragmentListBinding>() {
                 this@UsersListFragment.parent.navigateToHome()
             },
             onLongClick = {
-                // todo
+                UserDetailsDialog.newInstance(it).show(childFragmentManager, "user-dialog")
             },
         )
     }

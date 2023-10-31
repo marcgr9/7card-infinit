@@ -7,6 +7,7 @@ import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.context.startKoin
 import org.koin.dsl.module
+import ro.marc.sevencard.data.User
 import ro.marc.sevencard.data.local.UserDatabase
 import ro.marc.sevencard.data.repo.UsersRepo
 import ro.marc.sevencard.data.repo.impl.UsersRepoImpl
@@ -14,6 +15,7 @@ import ro.marc.sevencard.generator.QrDataGenerator
 import ro.marc.sevencard.generator.impl.SevenCardQrDataGeneratorImpl
 import ro.marc.sevencard.ui.MainViewModel
 import ro.marc.sevencard.ui.fragments.decrypt.DecryptViewModel
+import ro.marc.sevencard.ui.fragments.list.UserDialogViewModel
 import ro.marc.sevencard.ui.fragments.qr.QRViewModel
 
 class Application: Application() {
@@ -62,6 +64,12 @@ class Application: Application() {
                     viewModel {
                         DecryptViewModel(
                             get(),
+                        )
+                    }
+                    viewModel {
+                        UserDialogViewModel(
+                            get(),
+                            it.get<User>(),
                         )
                     }
                 },

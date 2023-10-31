@@ -32,4 +32,8 @@ class UsersRepoImpl(
         emit(userDAO.save(UserEntity(user.id, user.alias)))
     }
 
+    override fun deleteById(id: Long) = flow {
+        emit(userDAO.deleteById(id))
+    }
+
 }

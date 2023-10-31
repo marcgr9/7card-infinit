@@ -11,4 +11,6 @@ interface UsersRepo {
 
     fun getById(id: Long): Flow<User?>
 
+    fun deleteById(id: Long): Flow<Int>
+
 }

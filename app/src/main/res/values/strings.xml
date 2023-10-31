@@ -11,4 +11,7 @@
     <string name="decrypt_hint">Base64 string</string>
     <string name="main_list">Saved users</string>
     <string name="list_no_alias">No alias</string>
+    <string name="dialog_user_alias_hint">Alias</string>
+    <string name="dialog_user_delete">Delete</string>
+    <string name="dialog_user_save">Save</string>
 </resources>

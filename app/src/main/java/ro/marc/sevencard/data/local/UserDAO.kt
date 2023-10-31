@@ -17,4 +17,7 @@ interface UserDAO {
     @Query("SELECT * FROM users WHERE id = :id")
     suspend fun getById(id: Long): UserEntity?
 
+    @Query("DELETE FROM users WHERE id = :id")
+    suspend fun deleteById(id: Long): Int
+
 }
