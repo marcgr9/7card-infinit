@@ -1,4 +1,4 @@
-package ro.marc.sevencard.ui.fragments.qr
+package ro.marc.sevencard.ui.fragments.home.qr
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -11,7 +11,6 @@ import kotlinx.coroutines.launch
 import ro.marc.sevencard.data.User
 import ro.marc.sevencard.data.repo.UsersRepo
 import ro.marc.sevencard.generator.QrDataGenerator
-import ro.marc.sevencard.ui.MainViewModel
 
 class QRViewModel(
     private val qrDataGenerator: QrDataGenerator,

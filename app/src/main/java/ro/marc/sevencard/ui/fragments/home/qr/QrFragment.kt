@@ -1,4 +1,4 @@
-package ro.marc.sevencard.ui.fragments.qr
+package ro.marc.sevencard.ui.fragments.home.qr
 
 import android.os.Bundle
 import android.text.Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
@@ -6,7 +6,6 @@ import android.text.style.ForegroundColorSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.text.bold
 import androidx.core.text.buildSpannedString
 import androidx.lifecycle.lifecycleScope
 import com.google.logging.type.LogSeverity

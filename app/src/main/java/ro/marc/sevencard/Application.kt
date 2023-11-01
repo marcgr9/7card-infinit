@@ -16,7 +16,7 @@ import ro.marc.sevencard.generator.impl.SevenCardQrDataGeneratorImpl
 import ro.marc.sevencard.ui.MainViewModel
 import ro.marc.sevencard.ui.fragments.decrypt.DecryptViewModel
 import ro.marc.sevencard.ui.fragments.list.UserDialogViewModel
-import ro.marc.sevencard.ui.fragments.qr.QRViewModel
+import ro.marc.sevencard.ui.fragments.home.qr.QRViewModel
 
 class Application: Application() {
 

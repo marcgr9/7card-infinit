@@ -15,7 +15,7 @@
 
     <fragment
         android:id="@+id/qrDestination"
-        android:name="ro.marc.sevencard.ui.fragments.qr.QrFragment"
+        android:name="ro.marc.sevencard.ui.fragments.home.qr.QrFragment"
         android:label="Qr">
 
         <action
