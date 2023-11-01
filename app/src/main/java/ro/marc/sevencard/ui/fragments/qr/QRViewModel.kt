@@ -23,6 +23,16 @@ class QRViewModel(
         const val QR_CODE_DELAY_MS: Long = 350
     }
 
+    init {
+        viewModelScope.launch {
+            usersRepo.getById(userId).collect {
+                it?.let {
+                    _isIdSaved.value = true
+                }
+            }
+        }
+    }
+
     private val _progressBarProgress = MutableLiveData<Int>(0)
     val progressBarProgress: LiveData<Int>
         get() = _progressBarProgress
