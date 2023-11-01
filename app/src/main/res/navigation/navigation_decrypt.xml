@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_decrypt"
+    app:startDestination="@id/decryptInputDestination">
+
+    <fragment
+        android:id="@+id/decryptInputDestination"
+        android:name="ro.marc.sevencard.ui.fragments.decrypt.DecryptInputFragment"
+        android:label="DecryptInput">
+
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/decryptScannerDestination"
+        android:name="ro.marc.sevencard.ui.fragments.decrypt.DecryptScannerFragment"
+        android:label="DecryptScanner">
+
+
+    </fragment>
+
+</navigation>

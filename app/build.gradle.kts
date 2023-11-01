@@ -52,4 +52,8 @@ dependencies {
     implementation(libs.room)
     implementation(libs.room.ktx)
     kapt(libs.room.compiler)
+    implementation(libs.barcode.scanner)
+    implementation(libs.camerax)
+    implementation(libs.camerax.view)
+    implementation(libs.camerax.lifecycle)
 }
