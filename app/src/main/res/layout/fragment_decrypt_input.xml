@@ -25,12 +25,12 @@
             app:iconTint="@android:color/white"
             android:backgroundTint="@color/accent"
             android:layout_margin="8dp"
-            app:layout_constrainedWidth="true"
-            app:layout_constrainedHeight="false"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintWidth_percent=".125"
             app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintVertical_bias="0"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
