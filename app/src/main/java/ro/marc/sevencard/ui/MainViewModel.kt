@@ -11,7 +11,7 @@ import kotlinx.coroutines.launch
 import ro.marc.sevencard.data.User
 import ro.marc.sevencard.data.local.UserDAO
 import ro.marc.sevencard.data.repo.UsersRepo
-import ro.marc.sevencard.generator.QrDataGenerator
+import ro.marc.sevencard.data.generator.QrDataGenerator
 import ro.marc.sevencard.util.SingleLiveEvent
 
 class MainViewModel(

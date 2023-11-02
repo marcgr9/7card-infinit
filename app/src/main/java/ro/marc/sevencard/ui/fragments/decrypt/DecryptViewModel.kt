@@ -2,7 +2,7 @@ package ro.marc.sevencard.ui.fragments.decrypt
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import ro.marc.sevencard.generator.QrDataGenerator
+import ro.marc.sevencard.data.generator.QrDataGenerator
 import java.lang.Exception
 import java.lang.IllegalArgumentException
 

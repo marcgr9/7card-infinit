@@ -1,4 +1,4 @@
-package ro.marc.sevencard.generator
+package ro.marc.sevencard.data.generator
 
 interface QrDataGenerator {
 

@@ -1,7 +1,7 @@
-package ro.marc.sevencard.generator.impl
+package ro.marc.sevencard.data.generator.impl
 
 import android.util.Base64
-import ro.marc.sevencard.generator.QrDataGenerator
+import ro.marc.sevencard.data.generator.QrDataGenerator
 import java.security.MessageDigest
 import java.security.SecureRandom
 import javax.crypto.Cipher
