@@ -84,12 +84,15 @@
         app:layout_constraintTop_toBottomOf="@id/description"
         app:layout_constraintBottom_toTopOf="@+id/progressBar" />
 
-    <ProgressBar
-        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+    <com.google.android.material.progressindicator.LinearProgressIndicator
         android:id="@+id/progressBar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:max="100"
+        android:max="110"
+        app:trackColor="@color/primary"
+        app:indicatorColor="@color/accent"
+        app:trackCornerRadius="12dp"
+        android:padding="4dp"
         android:layout_marginTop="8dp"
         app:layout_constraintWidth_percent=".5"
         app:layout_constraintStart_toStartOf="parent"
