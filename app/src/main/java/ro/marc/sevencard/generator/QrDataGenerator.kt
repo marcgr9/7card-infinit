@@ -8,6 +8,6 @@ interface QrDataGenerator {
 
     fun encode(userId: Long): String
 
-    fun getIdFrom(base64: String): String
+    fun getIdFrom(base64: String): Long
 
 }

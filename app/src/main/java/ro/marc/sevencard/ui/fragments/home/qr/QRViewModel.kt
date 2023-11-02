@@ -39,7 +39,7 @@ class QRViewModel(
     val encodedDataFlow: Flow<String> = flow {
         while (true) {
             emit(qrDataGenerator.encode(userId))
-            _progressBarProgress.value = (_progressBarProgress.value!! + 2).takeIf { it <= 100 } ?: 0
+            _progressBarProgress.value = (_progressBarProgress.value!! + 2).takeIf { it <= 110 } ?: 0
             delay(QR_CODE_DELAY_MS)
         }
     }

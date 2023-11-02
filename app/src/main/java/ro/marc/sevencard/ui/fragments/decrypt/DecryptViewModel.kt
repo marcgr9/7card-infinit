@@ -14,7 +14,7 @@ class DecryptViewModel(
 
     fun decrypt(base64: String) {
         decryptedId.value = try {
-            qrDataGenerator.getIdFrom(base64)
+            qrDataGenerator.getIdFrom(base64).toString()
         } catch (e: Exception) {
             ""
         }
