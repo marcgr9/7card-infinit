@@ -47,29 +47,3 @@ class UserDialogViewModel(
     }
 
 }
-
-
-/*
-
-    MARC:
-        7 zile - client
-        5 zile - payments
-        4 zile - notificari & dialoguri
-        2 zile - transactions list
-        2 zile - creat repo-uri peste shared pref, security, ...
-        1 zi   - config
-        1 zi   - scan qr
-        1 zi   - register flow
-
-    PRISCILA:
-        4 zile - login
-        2 zile - register
-
-    CEZARA:
-        7 zile - send to flow
-
-    BUG FIXES:
-        1 zi   / persoana?
-
-
- */
